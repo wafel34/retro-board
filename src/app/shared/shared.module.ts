@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ButtonModule } from 'primeng/button';
+import { SidebarModule } from 'primeng/sidebar';
 import { LayoutComponent } from './layout/layout/layout.component';
 import { RouterModule } from '@angular/router';
 
@@ -12,10 +13,12 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ButtonModule,
-    RouterModule
+    RouterModule,
+    SidebarModule
   ],
   exports: [
-    ButtonModule
+    ButtonModule,
+    SidebarModule
   ]
 })
 export class SharedModule {
