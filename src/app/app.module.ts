@@ -10,6 +10,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
+    RouterModule.forRoot(APP_ROUTES),
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
