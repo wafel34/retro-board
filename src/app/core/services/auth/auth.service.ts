@@ -8,7 +8,9 @@ import UserCredential = firebase.auth.UserCredential;
 })
 export class AuthService {
 
-  constructor(public auth: AngularFireAuth) {
+  public user$ = this.auth.user;
+
+  constructor(private auth: AngularFireAuth) {
   }
 
   login(): Promise<UserCredential> {

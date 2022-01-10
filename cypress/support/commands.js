@@ -1,25 +1,16 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/database";
+import "firebase/compat/firestore";
+import { attachCustomCommands } from "cypress-firebase";
+
+firebase.initializeApp({
+  projectId: 'retro-board-f7506',
+  appId: '1:716269987550:web:c90719b6bc7d3d79c3c44f',
+  storageBucket: 'retro-board-f7506.appspot.com',
+  apiKey: 'AIzaSyDAlHzMK0kUESNOQQyd1iSnyEwl8HKQNFo',
+  authDomain: 'retro-board-f7506.firebaseapp.com',
+  messagingSenderId: '716269987550',
+});
+
+attachCustomCommands({Cypress, cy, firebase});

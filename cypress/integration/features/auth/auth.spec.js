@@ -5,6 +5,6 @@ describe('Authentication', () => {
   });
 
   it('should login a user', () => {
-    cy.get('.login')
+    cy.callFirestore("add", "retro-board-f7506test_hello_world", { some: "value" });
   });
 })

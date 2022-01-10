@@ -1,6 +1,6 @@
 <div class="grid w-full m-0">
   <nav class="nav col-2">
-
+    <div *ngIf="authService.user$ | async">Elo</div>
   </nav>
   <div class="col-10">
     <router-outlet></router-outlet>
